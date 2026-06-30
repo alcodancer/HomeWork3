@@ -1,18 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+var chess_size = 7
 
 func main() {
-	var chess_size int
-	chess_size = 8
+	draw_desk()
+}
+func draw_desk() {
+	k := " |▒|"
 	for i := 1; i <= chess_size; i++ {
+		if k == "▒| |" {
+			k = " |▒|"
+		} else {
+			k = "▒| |"
+		}
 		for j := 1; j <= chess_size/2; j++ {
-			if i%2 == 0 {
-				fmt.Print("# ")
-			}
-			if i%2 == 1 {
-				fmt.Print(" #")
-			}
+			fmt.Print(k)
 		}
 		fmt.Println("")
 	}
